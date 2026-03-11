@@ -1,16 +1,153 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>UniFlora Massage Almere</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Segoe UI, sans-serif;
+color:white;
+background:black;
+}
+
+/* sterren achtergrond */
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+/* logo rechtsboven */
+
+.logo{
+position:absolute;
+top:20px;
+right:30px;
+width:150px;
+filter:drop-shadow(0 0 20px #c88cff);
+}
+
+/* navigatie */
+
+nav{
+display:flex;
+justify-content:center;
+gap:40px;
+padding:20px;
+background:rgba(0,0,0,0.5);
+}
+
+nav a{
+color:#e8c9ff;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* header */
+
+header{
+text-align:center;
+padding:120px 20px;
+}
+
+h1{
+font-size:55px;
+color:#e8c9ff;
+}
+
+.slogan{
+font-size:24px;
+font-style:italic;
+}
+
+/* inhoud */
+
+section{
+max-width:1000px;
+margin:auto;
+padding:60px 20px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+padding:40px;
+border-radius:20px;
+margin-bottom:40px;
+}
+
+/* knoppen */
+
+.button{
+display:inline-block;
+padding:15px 35px;
+background:#9c4dff;
+border-radius:30px;
+color:white;
+text-decoration:none;
+margin-top:20px;
+}
+
+footer{
+text-align:center;
+padding:30px;
+background:rgba(0,0,0,0.7);
+}
+
+a{
+color:#e8c9ff;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<canvas id="stars"></canvas>
+
+<img src="logo.png" class="logo">
+
+<nav>
+<a href="#">Home</a>
+<a href="#">Over mij</a>
+<a href="#">Massages</a>
+<a href="#">Contact</a>
+</nav>
+
+<header>
+
+<h1>UniFlora</h1>
+
+<p class="slogan">
+Wees welkom en voel de magie van UniFlora
+</p>
+
+<p>Massage aan huis voor vrouwen in Almere</p>
+
+</header>
+
+<section>
+
 <div class="card">
 
 <h2>Over Florije</h2>
 
 <p>
 Mijn naam is Florije en ik ben de oprichter van UniFlora.
-Met aandacht, rust en intuïtie geef ik ontspanningsmassages
+Met rust, aandacht en intuïtie geef ik ontspanningsmassages
 en zwangerschapsmassages voor vrouwen in Almere en omgeving.
 </p>
 
 <p>
-Mijn wens is dat iedere vrouw zich veilig en welkom voelt
-en even kan ontsnappen aan de drukte van het dagelijks leven.
+Mijn wens is dat iedere vrouw zich welkom en veilig voelt
+en even volledig kan ontspannen.
 </p>
 
 <p>
@@ -21,26 +158,105 @@ Wees welkom en voel de magie van UniFlora.
 
 <div class="card">
 
-<h2>Contact</h2>
+<h2>Massages</h2>
 
 <p>
-📱 WhatsApp:  
-<a href="https://wa.me/31648133056">0648133056</a>
+Ontspanningsmassage van hoofd, gezicht, nek, schouders, rug,
+buik, armen, benen en voeten.
 </p>
 
-<p>
-📧 Email:  
-<a href="mailto:info@uniflora.nl">info@uniflora.nl</a>
-</p>
+<h3>Zwangerschapsmassage</h3>
 
 <p>
-📷 Instagram:  
-<a href="https://instagram.com">Instagram</a>
-</p>
-
-<p>
-👍 Facebook:  
-<a href="https://facebook.com">Facebook</a>
+Speciaal voor zwangere vrouwen voor ontspanning en verlichting
+van spanning.
 </p>
 
 </div>
+
+<div class="card">
+
+<h2>Tarieven</h2>
+
+<p><strong>€60 per uur</strong></p>
+
+<p>Inclusief reiskosten binnen Almere</p>
+
+<p>Buiten Almere €10 per 15 km</p>
+
+</div>
+
+<div class="card">
+
+<h2>Contact</h2>
+
+<p>📱 WhatsApp:  
+<a href="https://wa.me/31648133056">0648133056</a></p>
+
+<p>📧 Email:  
+<a href="mailto:info@uniflora.nl">info@uniflora.nl</a></p>
+
+<p>📷 Instagram:  
+<a href="https://instagram.com">Instagram</a></p>
+
+<p>👍 Facebook:  
+<a href="https://facebook.com">Facebook</a></p>
+
+</div>
+
+</section>
+
+<footer>
+
+UniFlora Massage Almere
+
+</footer>
+
+<script>
+
+const canvas=document.getElementById("stars");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let stars=[];
+
+for(let i=0;i<250;i++){
+stars.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+radius:Math.random()*1.5,
+speed:Math.random()*0.5
+});
+}
+
+function draw(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+ctx.fillStyle="white";
+
+stars.forEach(star=>{
+
+ctx.beginPath();
+ctx.arc(star.x,star.y,star.radius,0,Math.PI*2);
+ctx.fill();
+
+star.y+=star.speed;
+
+if(star.y>canvas.height){
+star.y=0;
+}
+
+});
+
+requestAnimationFrame(draw);
+
+}
+
+draw();
+
+</script>
+
+</body>
+</html>
