@@ -7,20 +7,18 @@
 
 <title>UniFlora Massage Almere</title>
 
-<meta name="description" content="Ontspanningsmassage en zwangerschapsmassage voor vrouwen in Almere. Massage aan huis met rust en aandacht.">
-
 <style>
 
 body{
 margin:0;
-font-family:Segoe UI, sans-serif;
+font-family:Segoe UI;
 color:white;
 background:black;
 }
 
 /* sterren */
 
-#stars{
+canvas{
 position:fixed;
 top:0;
 left:0;
@@ -81,8 +79,6 @@ border-radius:20px;
 margin-bottom:40px;
 }
 
-/* BUTTON */
-
 .button{
 display:inline-block;
 padding:15px 35px;
@@ -93,22 +89,10 @@ text-decoration:none;
 margin-top:20px;
 }
 
-/* REVIEWS */
-
-.review-slider{
-display:flex;
-gap:40px;
-animation:scrollReviews 25s linear infinite;
-}
-
-.review{
-min-width:250px;
-font-style:italic;
-}
-
-@keyframes scrollReviews{
-0%{transform:translateX(0)}
-100%{transform:translateX(-50%)}
+.social a{
+display:block;
+margin-top:10px;
+color:#e8c9ff;
 }
 
 footer{
@@ -127,8 +111,8 @@ background:rgba(0,0,0,0.7);
 
 <nav>
 <a href="#">Home</a>
+<a href="#">Over mij</a>
 <a href="#">Massages</a>
-<a href="#">Tarieven</a>
 <a href="#">Contact</a>
 </nav>
 
@@ -150,10 +134,27 @@ Wees welkom en voel de magie van UniFlora
 
 <div class="card">
 
+<h2>Over mij</h2>
+
+<p>
+Mijn naam is [jouw naam].  
+Met UniFlora wil ik vrouwen helpen om te ontspannen en weer in balans te komen.
+In een rustige en veilige sfeer bied ik ontspanningsmassages en zwangerschapsmassages aan huis in Almere en omgeving.
+</p>
+
+<p>
+Mijn doel is dat iedere vrouw zich welkom voelt en volledig kan ontspannen.
+</p>
+
+</div>
+
+<div class="card">
+
 <h2>Massages</h2>
 
 <p>
-Ontspanningsmassage van hoofd, gezicht, nek, schouders, rug, buik, armen, benen en voeten.
+Ontspanningsmassage van hoofd, gezicht, nek, schouders, rug, buik,
+armen, benen en voeten.
 </p>
 
 <h3>Zwangerschapsmassage</h3>
@@ -178,41 +179,19 @@ Speciaal voor zwangere vrouwen voor ontspanning en verlichting van spanning.
 
 <div class="card">
 
-<h2>Wat klanten zeggen</h2>
+<h2>Contact</h2>
 
-<div class="review-slider">
+<p>WhatsApp: 0648133056</p>
 
-<div class="review">
-⭐️⭐️⭐️⭐️⭐️  
-"Ik voelde me meteen ontspannen. Heerlijke massage."
-</div>
+<p>Email: jouwemail@email.nl</p>
 
-<div class="review">
-⭐️⭐️⭐️⭐️⭐️  
-"Rustige energie en professioneel."
-</div>
+<div class="social">
 
-<div class="review">
-⭐️⭐️⭐️⭐️⭐️  
-"Fijne zwangerschapsmassage."
-</div>
+<a href="#">Instagram</a>
+
+<a href="#">Facebook</a>
 
 </div>
-
-</div>
-
-<div class="card">
-
-<h2>Boek een afspraak</h2>
-
-<iframe src="https://calendly.com/uniflora-massage"
-width="100%" height="600" frameborder="0"></iframe>
-
-<p>Of stuur een WhatsApp bericht:</p>
-
-<a class="button" href="https://wa.me/31648133056">
-WhatsApp afspraak
-</a>
 
 </div>
 
