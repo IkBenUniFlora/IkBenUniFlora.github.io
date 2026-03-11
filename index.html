@@ -13,12 +13,16 @@ body{
 margin:0;
 font-family:Segoe UI;
 color:white;
-background:linear-gradient(180deg,#1b0033,#3b0070,#000);
+background:black;
 }
-margin:0;
-font-family:Segoe UI;
-color:white;
-background:linear-gradient(180deg,#1b0033,#3b0070,#000);
+
+/* sterren achtergrond */
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
 }
 
 /* NAV */
@@ -28,7 +32,7 @@ display:flex;
 justify-content:center;
 gap:40px;
 padding:20px;
-background:rgba(0,0,0,0.4);
+background:rgba(0,0,0,0.5);
 }
 
 nav a{
@@ -39,15 +43,15 @@ font-weight:bold;
 
 /* HEADER */
 
-header{img src="logo.png" class="logo"
+header{
 text-align:center;
 padding:120px 20px;
 }
 
 .logo{
 width:200px;
-margin-bottom:20px;
 filter:drop-shadow(0 0 20px #c88cff);
+margin-bottom:20px;
 }
 
 h1{
@@ -60,7 +64,7 @@ font-size:24px;
 font-style:italic;
 }
 
-/* SECTIONS */
+/* SECTION */
 
 section{
 max-width:1000px;
@@ -87,36 +91,106 @@ text-decoration:none;
 margin-top:20px;
 }
 
-/* REVIEWS */
-
-.review{
-margin-top:15px;
-font-style:italic;
-}
-
-/* FOOTER */
-
 footer{
 text-align:center;
 padding:30px;
-background:rgba(0,0,0,0.6);
+background:rgba(0,0,0,0.7);
 }
 
 </style>
 
 </head>
 
-<body><script>
+<body>
 
-const canvas = document.getElementById("stars");
-const ctx = canvas.getContext("2d");
+<canvas id="stars"></canvas>
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+<nav>
 
-let stars = [];
+<a href="#">Home</a>
+<a href="#">Massages</a>
+<a href="#">Tarieven</a>
+<a href="#">Contact</a>
 
-for(let i=0;i<200;i++){
+</nav>
+
+<header>
+
+<img src="logo.png" class="logo">
+
+<h1>UniFlora</h1>
+
+<p class="slogan">
+Wees welkom en voel de magie van UniFlora
+</p>
+
+<p>
+Massage aan huis voor vrouwen in Almere
+</p>
+
+</header>
+
+<section>
+
+<div class="card">
+
+<h2>Massages</h2>
+
+<p>
+Ontspanningsmassage van hoofd, gezicht, nek, schouders, rug, buik, armen, benen en voeten.
+</p>
+
+<h3>Zwangerschapsmassage</h3>
+
+<p>
+Speciaal voor zwangere vrouwen voor ontspanning van rug, nek en benen.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Tarieven</h2>
+
+<p><strong>€60 per uur</strong></p>
+
+<p>Inclusief reiskosten binnen Almere</p>
+
+<p>Buiten Almere €10 per 15 km</p>
+
+</div>
+
+<div class="card">
+
+<h2>Afspraak maken</h2>
+
+<p>Stuur mij een WhatsApp bericht:</p>
+
+<a class="button" href="https://wa.me/31648133056">
+WhatsApp afspraak
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+UniFlora Massage Almere
+
+</footer>
+
+<script>
+
+const canvas=document.getElementById("stars");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let stars=[];
+
+for(let i=0;i<300;i++){
 stars.push({
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
@@ -145,102 +219,12 @@ star.y=0;
 });
 
 requestAnimationFrame(draw);
+
 }
 
 draw();
 
 </script>
-
-<nav>
-
-<a href="#">Home</a>
-<a href="#">Massages</a>
-<a href="#">Tarieven</a>
-<a href="#">Contact</a>
-
-</nav>
-
-<header>
-
-<h1>UniFlora</h1>
-
-<p class="slogan">
-Wees welkom en voel de magie van UniFlora
-</p>
-
-<p>
-Massage aan huis voor vrouwen in Almere
-</p>
-
-</header>
-
-<section>
-
-<div class="card">
-
-<h2>Massages</h2>
-
-<p>Ontspanningsmassage van:</p>
-
-<p>
-Hoofd • Gezicht • Nek • Schouders • Rug • Buik • Armen • Benen • Voeten
-</p>
-
-<h3>Zwangerschapsmassage</h3>
-
-<p>
-Speciaal voor zwangere vrouwen voor ontspanning van rug, nek en benen.
-</p>
-
-</div>
-
-<div class="card">
-
-<h2>Tarieven</h2>
-
-<p><strong>€60 per uur</strong></p>
-
-<p>Inclusief reiskosten binnen Almere</p>
-
-<p>Buiten Almere €10 per 15 km</p>
-
-</div>
-
-<div class="card">
-
-<h2>Wat klanten zeggen</h2>
-
-<div class="review">
-⭐️⭐️⭐️⭐️⭐️  
-"Heerlijke massage, ik voelde me direct ontspannen."
-</div>
-
-<div class="review">
-⭐️⭐️⭐️⭐️⭐️  
-"Rustige energie en professioneel."
-</div>
-
-</div>
-
-<div class="card">
-
-<h2>Afspraak maken</h2>
-
-<p>Stuur mij een WhatsApp bericht:</p>
-
-<a class="button" href="https://wa.me/31648133056">
-WhatsApp afspraak
-</a>
-
-</div>
-
-</section>
-
-<footer>
-
-UniFlora Massage Almere
-
-</footer>
 
 </body>
 </html>
