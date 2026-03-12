@@ -14,7 +14,7 @@ body{
 margin:0;
 font-family:Segoe UI, sans-serif;
 color:white;
-background:radial-gradient(circle at top,#1a0030,#000000);
+background:radial-gradient(circle at top,#3a0066,#000000);
 }
 
 /* sterren achtergrond */
@@ -34,7 +34,7 @@ width:260px;
 margin:40px auto 10px auto;
 }
 
-/* energie glow achter logo */
+/* glow achter logo */
 
 .logo-container::before{
 content:"";
@@ -42,8 +42,8 @@ position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-width:300px;
-height:300px;
+width:320px;
+height:320px;
 background:radial-gradient(circle,#7a2cff55,#00000000);
 filter:blur(40px);
 z-index:-1;
@@ -87,7 +87,7 @@ padding:40px 20px;
 }
 
 h1{
-font-size:50px;
+font-size:48px;
 color:#e8c9ff;
 }
 
@@ -129,7 +129,7 @@ gap:10px;
 }
 
 h1{
-font-size:34px;
+font-size:32px;
 }
 
 .slogan{
@@ -141,6 +141,30 @@ padding:25px;
 margin:15px;
 }
 
+}
+
+/* WhatsApp knop */
+
+.whatsapp-float{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:white;
+font-size:26px;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+box-shadow:0 0 15px rgba(0,0,0,0.4);
+z-index:1000;
+}
+
+.whatsapp-float:hover{
+transform:scale(1.1);
 }
 
 footer{
@@ -244,11 +268,6 @@ en verlichting van spanning.
 </p>
 
 <p>
-📧 Email:
-<a href="mailto:info@uniflora.nl">info@uniflora.nl</a>
-</p>
-
-<p>
 📷 Instagram:
 <a href="https://instagram.com/ikbenuniflora">Ikbenuniflora</a>
 </p>
@@ -267,6 +286,10 @@ en verlichting van spanning.
 UniFlora Massage Almere
 
 </footer>
+
+<a href="https://wa.me/31648133056" class="whatsapp-float">
+💬
+</a>
 
 <script>
 
@@ -301,6 +324,7 @@ ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
 ctx.fill();
 
 s.y+=s.speed;
+s.x+=Math.sin(Date.now()*0.0003)*0.2;
 
 if(s.y>canvas.height){
 s.y=0;
@@ -313,50 +337,6 @@ requestAnimationFrame(draw);
 }
 
 draw();
-
-/* sterren in logo */
-
-const canvasLogo=document.getElementById("logoStars");
-const ctxLogo=canvasLogo.getContext("2d");
-
-canvasLogo.width=260;
-canvasLogo.height=260;
-
-let starsLogo=[];
-
-for(let i=0;i<40;i++){
-starsLogo.push({
-x:Math.random()*260,
-y:Math.random()*260,
-r:Math.random()*1.5,
-speed:Math.random()*0.2
-});
-}
-
-function drawLogoStars(){
-
-ctxLogo.clearRect(0,0,260,260);
-ctxLogo.fillStyle="white";
-
-starsLogo.forEach(s=>{
-
-ctxLogo.beginPath();
-ctxLogo.arc(s.x,s.y,s.r,0,Math.PI*2);
-ctxLogo.fill();
-
-s.y+=s.speed;
-
-if(s.y>260){
-s.y=0;
-}
-
-});
-
-requestAnimationFrame(drawLogoStars);
-
-}
-
-drawLogoStars();
 
 </script>
 
