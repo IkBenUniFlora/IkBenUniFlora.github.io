@@ -8,8 +8,6 @@
 
 <title>UniFlora Massage Almere</title>
 
-<!-- mooi lettertype -->
-
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Quicksand:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
@@ -19,9 +17,10 @@ margin:0;
 font-family:Quicksand, sans-serif;
 color:white;
 background:black;
+overflow-x:hidden;
 }
 
-/* galaxy achtergrond */
+/* galaxy nevel */
 
 body::before{
 content:"";
@@ -31,9 +30,22 @@ left:0;
 width:100%;
 height:100%;
 background:
-radial-gradient(circle at 50% 20%, #5a1cff55, transparent 60%),
-radial-gradient(circle at 80% 80%, #220044, transparent 60%);
+radial-gradient(circle at 40% 20%, #7a2cff44, transparent 60%),
+radial-gradient(circle at 80% 80%, #2b0044, transparent 60%);
+animation:nebulaMove 30s infinite alternate ease-in-out;
 z-index:-2;
+}
+
+@keyframes nebulaMove{
+
+0%{
+transform:translateY(0px);
+}
+
+100%{
+transform:translateY(-80px);
+}
+
 }
 
 /* sterren */
@@ -50,7 +62,13 @@ z-index:-1;
 .logo-container{
 position:relative;
 width:260px;
-margin:60px auto 20px auto;
+margin:70px auto 20px auto;
+animation:floatLogo 6s ease-in-out infinite;
+}
+
+.logo{
+width:100%;
+display:block;
 }
 
 /* glow achter logo */
@@ -68,9 +86,14 @@ filter:blur(60px);
 z-index:-1;
 }
 
-.logo{
-width:100%;
-display:block;
+/* logo zweven */
+
+@keyframes floatLogo{
+
+0%{transform:translateY(0px);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0px);}
+
 }
 
 /* titel */
@@ -104,6 +127,7 @@ background:rgba(255,255,255,0.05);
 padding:35px;
 border-radius:20px;
 margin-bottom:30px;
+backdrop-filter:blur(6px);
 }
 
 /* links */
@@ -153,6 +177,10 @@ justify-content:center;
 text-decoration:none;
 box-shadow:0 0 15px rgba(0,0,0,0.4);
 z-index:1000;
+}
+
+.whatsapp-float:hover{
+transform:scale(1.1);
 }
 
 footer{
@@ -258,8 +286,6 @@ UniFlora Massage Almere
 <a href="https://wa.me/31648133056" class="whatsapp-float">💬</a>
 
 <script>
-
-/* sterren */
 
 const canvas=document.getElementById("stars");
 const ctx=canvas.getContext("2d");
