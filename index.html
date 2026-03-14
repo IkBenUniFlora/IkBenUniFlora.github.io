@@ -1,410 +1,127 @@
 <!DOCTYPE html>
 <html lang="nl">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>UniFlora Massage Almere</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Quicksand:wght@300;400&display=swap" rel="stylesheet">
-
 <style>
-
 body{
+font-family: Arial, sans-serif;
 margin:0;
-font-family:Quicksand, sans-serif;
+background:#f5f5f5;
+color:#333;
+}
+
+header{
+background:#6da67a;
 color:white;
-background:black;
-overflow-x:hidden;
-}
-
-/* galaxy nevel */
-
-body::before{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:
-radial-gradient(circle at 40% 20%, #7a2cff44, transparent 60%),
-radial-gradient(circle at 80% 80%, #2b0044, transparent 60%);
-animation:nebulaMove 30s infinite alternate ease-in-out;
-z-index:-2;
-}
-
-@keyframes nebulaMove{
-
-0%{transform:translateY(0px);}
-100%{transform:translateY(-80px);}
-
-}
-
-/* sterren achtergrond */
-
-#stars{
-position:fixed;
-top:0;
-left:0;
-z-index:-1;
-}
-
-/* logo */
-
-.logo-container{
-position:relative;
-width:260px;
-margin:70px auto 20px auto;
-animation:floatLogo 6s ease-in-out infinite;
-}
-
-.logo{
-width:100%;
-display:block;
-}
-
-/* glow achter logo */
-
-.logo-container::before{
-content:"";
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-width:340px;
-height:340px;
-background:radial-gradient(circle,#7a2cff66,#00000000);
-filter:blur(60px);
-z-index:-1;
-}
-
-/* draaiende sterren rond logo */
-
-.logo-container::after{
-content:"✦ ✦ ✦";
-position:absolute;
-top:-20px;
-left:-20px;
-width:300px;
-height:300px;
-font-size:20px;
-color:#e8c9ff;
-animation:spinStars 20s linear infinite;
-}
-
-@keyframes spinStars{
-
-0%{transform:rotate(0deg);}
-100%{transform:rotate(360deg);}
-
-}
-
-/* logo zweven */
-
-@keyframes floatLogo{
-
-0%{transform:translateY(0px);}
-50%{transform:translateY(-10px);}
-100%{transform:translateY(0px);}
-
-}
-
-/* titel */
-
-h1{
+padding:40px;
 text-align:center;
-font-family:Cinzel, serif;
-font-size:52px;
-letter-spacing:3px;
-color:#e8c9ff;
-margin:10px 0;
 }
 
-.slogan{
+nav{
+background:#4c7a59;
+padding:10px;
 text-align:center;
-font-size:22px;
-font-style:italic;
-color:#d9b3ff;
 }
 
-/* inhoud */
+nav a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-weight:bold;
+}
 
 section{
+padding:40px;
 max-width:900px;
 margin:auto;
-padding:40px 20px;
-}
-
-.card{
-background:rgba(255,255,255,0.05);
-padding:35px;
-border-radius:20px;
-margin-bottom:30px;
-backdrop-filter:blur(6px);
-}
-
-/* reviews */
-
-.review{
-margin-top:15px;
-font-size:18px;
-}
-
-/* links */
-
-a{
-color:#e8c9ff;
-}
-
-/* mobiel */
-
-@media (max-width:600px){
-
-.logo-container{
-width:180px;
-}
-
-h1{
-font-size:34px;
-}
-
-.slogan{
-font-size:18px;
-}
-
-.card{
-padding:25px;
-margin:15px;
-}
-
-}
-
-/* WhatsApp knop */
-
-.whatsapp-float{
-position:fixed;
-bottom:25px;
-right:25px;
-background:#25D366;
-color:white;
-font-size:26px;
-width:60px;
-height:60px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-text-decoration:none;
-box-shadow:0 0 15px rgba(0,0,0,0.4);
-z-index:1000;
-}
-
-.whatsapp-float:hover{
-transform:scale(1.1);
+background:white;
+margin-top:20px;
+border-radius:8px;
 }
 
 footer{
 text-align:center;
-padding:25px;
-background:rgba(0,0,0,0.7);
+padding:20px;
+background:#4c7a59;
+color:white;
+margin-top:40px;
 }
-
 </style>
-
 </head>
 
 <body>
 
-<canvas id="stars"></canvas>
+<header>
+<h1>UniFlora Massage</h1>
+<p>Rust, ontspanning en balans voor lichaam en geest</p>
+</header>
 
-<div class="logo-container">
-<img src="uniflora-logo.png" class="logo">
-</div>
+<nav>
+<a href="#over">Over mij</a>
+<a href="#massages">Massages</a>
+<a href="#prijzen">Prijzen</a>
+<a href="#contact">Contact</a>
+</nav>
 
-<h1>UniFlora</h1>
-
-<p class="slogan">
-Wees welkom en voel de magie van UniFlora
+<section id="over">
+<h2>Over mij</h2>
+<p>
+Welkom bij UniFlora Massage.  
+Ik bied ontspannende massages voor volwassenen, kinderen en zwangere vrouwen.
+Mijn doel is om spanning in het lichaam te verminderen en een moment van rust te creëren.
 </p>
+</section>
 
-<section>
+<section id="massages">
+<h2>Massages</h2>
 
-<div class="card">
-
-<h2>Over Florije</h2>
+<ul>
+<li>Ontspanningsmassage</li>
+<li>Massage voor kinderen</li>
+<li>Zwangerschapsmassage</li>
+<li>Rug- nek- en schoudermassage</li>
+</ul>
 
 <p>
-Mijn naam is Florije en ik ben de oprichter van UniFlora.
-Met rust, aandacht en intuïtie geef ik ontspanningsmassages
-en zwangerschapsmassages voor vrouwen in Almere en omgeving.
+Speciaal voor zwangere vrouwen:  
+helpt spanning in het lichaam te verminderen en biedt een moment van rust tijdens de zwangerschap.
 </p>
+</section>
 
-<p>
-Mijn wens is dat iedere vrouw zich welkom en veilig voelt
-en even volledig kan ontspannen.
-</p>
+<section id="prijzen">
+<h2>Prijzen</h2>
 
-</div>
+<ul>
+<li>30 minuten – €35</li>
+<li>60 minuten – €60</li>
+<li>90 minuten – €85</li>
+</ul>
 
-<div class="card">
+<p>Reiskosten vanaf €10 afhankelijk van de afstand.</p>
 
-<h2>Contact</h2>
+</section>
 
-<p>📧 Algemene vragen:</p>
-<p>
-<a href="mailto:info@ikbenuniflora.nl">
-info@ikbenuniflora.nl
-</a>
-</p>
-
-<p>📅 Afspraak maken:</p>
-<p>
-<a href="mailto:afspraak@ikbenuniflora.nl">
-afspraak@ikbenuniflora.nl
-</a>
-</p>
-
-<p>📱 WhatsApp:</p>
-<p>
-<a href="https://wa.me/31648133056">
-06 48 13 30 56
-</a>
-</p>
-
-<p>📷 Instagram:</p>
-<p>
-<a href="https://instagram.com/ikbenuniflora">
-Ikbenuniflora
-</a>
-</p>
-
-<p>👍 Facebook:</p>
-<p>
-<a href="https://facebook.com/ikbenuniflora">
-Ikbenuniflora
-</a>
-</p>
-
-</div>
-<h2>MMassages bij UniFlora
-
-Bij UniFlora kun je terecht voor ontspannende massages aan huis voor vrouwen, kinderen en zwangere vrouwen in Almere en omgeving.
-Mijn massages zijn gericht op rust, ontspanning en het herstellen van balans in lichaam en geest.
-
-Ontspanningsmassage
-
-Een zachte en rustgevende massage van bijvoorbeeld rug, nek, schouders, armen, benen en voeten.
-Deze massage helpt stress en spanning in het lichaam los te laten en weer helemaal tot jezelf te komen.
-
-Zwangerschapsmassage
-
-Speciaal voor zwangere vrouwen.
-Deze massage helpt spanning in het lichaam te verminderen en biedt een moment van rust tijdens de zwangerschap.
-Het ondersteunt ontspanning van rug, nek en benen en helpt het lichaam even helemaal tot rust te komen.
-
-Kindermassage
-
-Ook kinderen kunnen spanning in hun lichaam ervaren.
-Een rustige en veilige massage kan helpen om te ontspannen, beter te slapen en weer meer balans te voelen.
-
-<div class="card">
-
-<h2>Wat klanten zeggen</h2>
-
-<div class="review">
-⭐⭐⭐⭐⭐  
-"Ik voelde me direct ontspannen. Een heerlijke massage."
-</div>
-
-<div class="review">
-⭐⭐⭐⭐⭐  
-"Florije heeft een rustige energie en werkt heel professioneel."
-</div>
-
-<div class="review">
-⭐⭐⭐⭐⭐  
-"De zwangerschapsmassage was precies wat ik nodig had."
-</div>
-
-</div>
-
-<div class="card">
-
+<section id="contact">
 <h2>Contact</h2>
 
 <p>
-📱 WhatsApp:
-<a href="https://wa.me/31648133056">0648133056</a>
+Wil je een afspraak maken of meer informatie?
 </p>
 
 <p>
-📷 Instagram:
-<a href="https://instagram.com/ikbenuniflora">Ikbenuniflora</a>
+Email: info@ikbenuniflora.nl  
+<br>
+Telefoon: 06-xxxxxxxx
 </p>
-
-<p>
-👍 Facebook:
-<a href="https://facebook.com/ikbenuniflora">Ikbenuniflora</a>
-</p>
-
-</div>
 
 </section>
 
 <footer>
-UniFlora Massage Almere
+<p>© 2026 UniFlora Massage Almere</p>
 </footer>
-
-<a href="https://wa.me/31648133056" class="whatsapp-float">💬</a>
-
-<script>
-
-const canvas=document.getElementById("stars");
-const ctx=canvas.getContext("2d");
-
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-
-let stars=[];
-
-for(let i=0;i<200;i++){
-stars.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-r:Math.random()*1.5,
-speed:Math.random()*0.3
-});
-}
-
-function draw(){
-
-ctx.clearRect(0,0,canvas.width,canvas.height);
-ctx.fillStyle="white";
-
-stars.forEach(s=>{
-
-ctx.beginPath();
-ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-ctx.fill();
-
-s.y+=s.speed;
-
-if(s.y>canvas.height){
-s.y=0;
-}
-
-});
-
-requestAnimationFrame(draw);
-
-}
-
-draw();
-
-</script>
 
 </body>
 </html>
