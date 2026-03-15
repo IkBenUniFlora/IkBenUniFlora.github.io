@@ -10,28 +10,33 @@
 
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, sans-serif;
 color:white;
-background:black;
-background-image:url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564");
-background-size:cover;
-background-attachment:fixed;
+background: radial-gradient(circle at top, #2a003f, #000000);
+background-attachment: fixed;
 }
 
 header{
 text-align:center;
-padding:80px 20px;
+padding:60px 20px;
 background:rgba(0,0,0,0.6);
 }
 
+header img{
+width:140px;
+margin-bottom:20px;
+}
+
 h1{
-font-size:50px;
+font-size:45px;
+margin:10px;
+color:#e0b3ff;
 }
 
 nav{
 text-align:center;
-background:rgba(0,0,0,0.7);
 padding:15px;
+background:rgba(0,0,0,0.7);
 }
 
 nav a{
@@ -41,16 +46,21 @@ text-decoration:none;
 font-weight:bold;
 }
 
+nav a:hover{
+color:#c77dff;
+}
+
 section{
 max-width:900px;
 margin:40px auto;
 padding:30px;
-background:rgba(0,0,0,0.7);
-border-radius:10px;
+background:rgba(0,0,0,0.65);
+border-radius:12px;
+box-shadow:0 0 15px rgba(180,0,255,0.3);
 }
 
 h2{
-color:#9fffa5;
+color:#d0a3ff;
 }
 
 ul{
@@ -61,6 +71,21 @@ footer{
 text-align:center;
 padding:30px;
 background:rgba(0,0,0,0.8);
+margin-top:40px;
+}
+
+button{
+background:#8a2be2;
+border:none;
+padding:12px 25px;
+color:white;
+border-radius:8px;
+cursor:pointer;
+font-size:16px;
+}
+
+button:hover{
+background:#a64dff;
 }
 
 </style>
@@ -69,33 +94,52 @@ background:rgba(0,0,0,0.8);
 <body>
 
 <header>
+
+<img src="uniflora-logo.png" alt="UniFlora logo">
+
 <h1>UniFlora Massage</h1>
+
 <p>Rust, ontspanning en balans voor lichaam en geest</p>
+
 </header>
 
 <nav>
+
 <a href="#over">Over mij</a>
 <a href="#massages">Massages</a>
 <a href="#prijzen">Prijzen</a>
 <a href="#contact">Contact</a>
+
 </nav>
 
 <section id="over">
+
 <h2>Over mij</h2>
-<p>Welkom bij UniFlora Massage. Ik bied ontspannende massages voor volwassenen, kinderen en zwangere vrouwen. Mijn doel is om spanning in het lichaam te verminderen en een moment van rust te creëren.</p>
+
+<p>
+Welkom bij UniFlora Massage.  
+Ik bied ontspannende massages voor volwassenen, kinderen en zwangere vrouwen.  
+Mijn doel is om spanning in het lichaam te verminderen en een moment van rust te creëren.
+</p>
+
 </section>
 
 <section id="massages">
+
 <h2>Massages</h2>
 
 <ul>
+
 <li>Ontspanningsmassage</li>
 <li>Massage voor kinderen</li>
 <li>Zwangerschapsmassage</li>
-<li>Rug- nek- en schoudermassage</li>
+<li>Rug-, nek- en schoudermassage</li>
+
 </ul>
 
-<p>Speciaal voor zwangere vrouwen: helpt spanning in het lichaam te verminderen en biedt een moment van rust tijdens de zwangerschap.</p>
+<p>
+Speciaal voor zwangere vrouwen: helpt spanning in het lichaam te verminderen en biedt een moment van rust tijdens de zwangerschap.
+</p>
 
 </section>
 
@@ -104,8 +148,10 @@ background:rgba(0,0,0,0.8);
 <h2>Prijzen</h2>
 
 <ul>
+
 <li>30 minuten – €35</li>
 <li>60 minuten – €60</li>
+
 </ul>
 
 <p>Reiskosten vanaf €10 afhankelijk van afstand.</p>
@@ -120,10 +166,16 @@ background:rgba(0,0,0,0.8);
 
 <p>Email: info@ikbenuniflora.nl</p>
 
+<button onclick="window.location.href='mailto:info@ikbenuniflora.nl'">
+Stuur een bericht
+</button>
+
 </section>
 
 <footer>
+
 <p>© UniFlora Massage</p>
+
 </footer>
 
 </body>
