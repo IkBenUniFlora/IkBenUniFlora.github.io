@@ -20,7 +20,7 @@ background:black;
 overflow-x:hidden;
 }
 
-/* galaxy nevel verbeterd */
+/* lichte paarse galaxy gloed */
 
 body::before{
 content:"";
@@ -31,9 +31,8 @@ width:100%;
 height:100%;
 background:
 
-radial-gradient(circle at 30% 20%, #8a2cff55, transparent 60%),
-radial-gradient(circle at 80% 80%, #3a0066, transparent 60%),
-radial-gradient(circle at 60% 40%, #5a00aa33, transparent 70%);
+radial-gradient(circle at 40% 20%, #7a2cff33, transparent 60%),
+radial-gradient(circle at 80% 80%, #300055, transparent 70%);
 
 animation:nebulaMove 40s infinite alternate ease-in-out;
 z-index:-2;
@@ -42,11 +41,11 @@ z-index:-2;
 @keyframes nebulaMove{
 
 0%{transform:translateY(0px);}
-100%{transform:translateY(-120px);}
+100%{transform:translateY(-80px);}
 
 }
 
-/* sterren canvas */
+/* sterren */
 
 #stars{
 position:fixed;
@@ -60,7 +59,7 @@ z-index:-1;
 .logo-container{
 position:relative;
 width:260px;
-margin:80px auto 25px auto;
+margin:70px auto 20px auto;
 animation:floatLogo 6s ease-in-out infinite;
 }
 
@@ -69,52 +68,42 @@ width:100%;
 display:block;
 }
 
-/* sterkere glow */
-
 .logo-container::before{
 content:"";
 position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-width:420px;
-height:420px;
-
-background:radial-gradient(circle,#8a2cff77,#00000000);
-
-filter:blur(90px);
+width:340px;
+height:340px;
+background:radial-gradient(circle,#7a2cff66,#00000000);
+filter:blur(60px);
 z-index:-1;
 }
 
-/* sterren rond logo */
+/* draaiende sterren */
 
 .logo-container::after{
-content:"✦ ✦ ✦ ✦";
+content:"✦ ✦ ✦";
 position:absolute;
-top:-30px;
-left:-30px;
-width:320px;
-height:320px;
-font-size:22px;
+top:-20px;
+left:-20px;
+width:300px;
+height:300px;
+font-size:20px;
 color:#e8c9ff;
-animation:spinStars 24s linear infinite;
+animation:spinStars 20s linear infinite;
 }
 
 @keyframes spinStars{
-
 0%{transform:rotate(0deg);}
 100%{transform:rotate(360deg);}
-
 }
 
-/* logo zweven */
-
 @keyframes floatLogo{
-
 0%{transform:translateY(0px);}
-50%{transform:translateY(-12px);}
+50%{transform:translateY(-10px);}
 100%{transform:translateY(0px);}
-
 }
 
 /* titel */
@@ -122,7 +111,7 @@ animation:spinStars 24s linear infinite;
 h1{
 text-align:center;
 font-family:Cinzel, serif;
-font-size:54px;
+font-size:52px;
 letter-spacing:3px;
 color:#e8c9ff;
 margin:10px 0;
@@ -144,27 +133,32 @@ padding:40px 20px;
 }
 
 .card{
-background:rgba(255,255,255,0.06);
+background:rgba(255,255,255,0.05);
 padding:35px;
 border-radius:20px;
 margin-bottom:30px;
-backdrop-filter:blur(8px);
-
-box-shadow:
-0 0 20px rgba(140,0,255,0.25);
+backdrop-filter:blur(6px);
 }
 
-/* reviews */
+/* review formulier */
 
-.review{
-margin-top:15px;
-font-size:18px;
+textarea{
+width:100%;
+height:80px;
+border-radius:10px;
+border:none;
+padding:10px;
+margin-top:10px;
 }
 
-/* links */
-
-a{
-color:#e8c9ff;
+button{
+background:#7a2cff;
+border:none;
+padding:12px 20px;
+color:white;
+border-radius:10px;
+margin-top:10px;
+cursor:pointer;
 }
 
 /* mobiel */
@@ -206,15 +200,8 @@ display:flex;
 align-items:center;
 justify-content:center;
 text-decoration:none;
-
-box-shadow:
-0 0 20px rgba(0,0,0,0.5);
-
+box-shadow:0 0 15px rgba(0,0,0,0.4);
 z-index:1000;
-}
-
-.whatsapp-float:hover{
-transform:scale(1.1);
 }
 
 footer{
@@ -253,11 +240,6 @@ Met rust, aandacht en intuïtie geef ik ontspanningsmassages
 en zwangerschapsmassages voor vrouwen in Almere en omgeving.
 </p>
 
-<p>
-Mijn wens is dat iedere vrouw zich welkom en veilig voelt
-en even volledig kan ontspannen.
-</p>
-
 </div>
 
 <div class="card">
@@ -286,48 +268,56 @@ en verlichting van spanning.
 
 <p>Inclusief reiskosten binnen Almere</p>
 
-<p>Buiten Almere €10 per 15 km</p>
+<p>Buiten Almere <strong>€10 afhankelijk van de afstand</strong></p>
 
 </div>
 
 <div class="card">
 
-<h2>Wat klanten zeggen</h2>
+<h2>Review achterlaten</h2>
 
-<div class="review">
-⭐⭐⭐⭐⭐  
-"Ik voelde me direct ontspannen. Een heerlijke massage."
-</div>
+<p>Deel jouw ervaring met UniFlora:</p>
 
-<div class="review">
-⭐⭐⭐⭐⭐  
-"Florije heeft een rustige energie en werkt heel professioneel."
-</div>
+<textarea placeholder="Schrijf hier je ervaring..."></textarea>
 
-<div class="review">
-⭐⭐⭐⭐⭐  
-"De zwangerschapsmassage was precies wat ik nodig had."
-</div>
+<br>
+
+<button onclick="alert('Bedankt voor je review!')">
+Review versturen
+</button>
 
 </div>
 
 <div class="card">
 
-<h2>Contact</h2>
+<h2>Afspraak maken</h2>
+
+<p>
+📧 Email voor afspraak:
+<a href="mailto:info@ikbenuniflora.nl">
+info@ikbenuniflora.nl
+</a>
+</p>
 
 <p>
 📱 WhatsApp:
-<a href="https://wa.me/31648133056">0648133056</a>
+<a href="https://wa.me/31648133056">
+0648133056
+</a>
 </p>
 
 <p>
 📷 Instagram:
-<a href="https://instagram.com/ikbenuniflora">Ikbenuniflora</a>
+<a href="https://instagram.com/ikbenuniflora">
+Ikbenuniflora
+</a>
 </p>
 
 <p>
 👍 Facebook:
-<a href="https://facebook.com/ikbenuniflora">Ikbenuniflora</a>
+<a href="https://facebook.com/ikbenuniflora">
+Ikbenuniflora
+</a>
 </p>
 
 </div>
@@ -350,12 +340,12 @@ canvas.height=window.innerHeight;
 
 let stars=[];
 
-for(let i=0;i<300;i++){
+for(let i=0;i<250;i++){
 stars.push({
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
-r:Math.random()*1.8,
-speed:Math.random()*0.4
+r:Math.random()*1.5,
+speed:Math.random()*0.3
 });
 }
 
