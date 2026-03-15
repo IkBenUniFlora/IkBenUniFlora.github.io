@@ -22,15 +22,15 @@ overflow-x:hidden;
 .stars{
 position:fixed;
 width:100%;
-height:100%;
+height:200%;
 top:0;
 left:0;
-background:transparent url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
-animation:moveStars 120s linear infinite;
-z-index:-1;
+background:url("https://www.transparenttextures.com/patterns/stardust.png");
+animation:starsMove 200s linear infinite;
+z-index:-2;
 }
 
-@keyframes moveStars{
+@keyframes starsMove{
 from{transform:translateY(0);}
 to{transform:translateY(-2000px);}
 }
@@ -42,9 +42,9 @@ position:fixed;
 width:100%;
 height:100%;
 background:
-radial-gradient(circle at 20% 20%, rgba(120,0,200,0.3), transparent 40%),
-radial-gradient(circle at 80% 70%, rgba(80,0,150,0.3), transparent 40%);
-z-index:-2;
+radial-gradient(circle at 20% 20%, rgba(140,0,255,0.35), transparent 40%),
+radial-gradient(circle at 80% 70%, rgba(80,0,200,0.35), transparent 40%);
+z-index:-3;
 }
 
 header{
@@ -112,16 +112,10 @@ button:hover{
 background:#9d4edd;
 }
 
-.review-box{
+.map{
 margin-top:20px;
-}
-
-textarea{
-width:100%;
-height:80px;
-padding:10px;
-border-radius:6px;
-border:none;
+border-radius:10px;
+overflow:hidden;
 }
 
 footer{
@@ -165,8 +159,8 @@ margin-top:50px;
 <h2>Over mij</h2>
 
 <p>
-Welkom bij UniFlora Massage.
-Ik bied ontspannende massages voor volwassenen, kinderen en zwangere vrouwen.
+Welkom bij UniFlora Massage.  
+Ik bied ontspannende massages voor volwassenen, kinderen en zwangere vrouwen.  
 Mijn doel is om spanning in het lichaam te verminderen en een moment van rust te creëren.
 </p>
 
@@ -212,17 +206,13 @@ Speciaal voor zwangere vrouwen: helpt spanning in het lichaam te verminderen en 
 
 <p>Laat hier een review achter:</p>
 
-<div class="review-box">
-
-<textarea placeholder="Schrijf hier je ervaring..."></textarea>
+<textarea style="width:100%;height:80px;border-radius:8px;padding:10px;"></textarea>
 
 <br><br>
 
 <button onclick="alert('Bedankt voor je review!')">
 Review versturen
 </button>
-
-</div>
 
 </section>
 
@@ -235,6 +225,19 @@ Review versturen
 <button onclick="window.open('https://wa.me/31600000000')">
 Stuur WhatsApp
 </button>
+
+<div class="map">
+
+<iframe
+width="100%"
+height="300"
+style="border:0"
+loading="lazy"
+allowfullscreen
+src="https://www.google.com/maps?q=Almere&output=embed">
+</iframe>
+
+</div>
 
 </section>
 
