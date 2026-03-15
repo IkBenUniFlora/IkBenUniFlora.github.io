@@ -6,7 +6,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>UniFlora Massage Almere</title>
+<title>UniFlora Massage Almere | Ontspanningsmassage & Zwangerschapsmassage</title>
+
+<meta name="description" content="UniFlora Massage Almere – ontspanningsmassage, zwangerschapsmassage en kindermassage aan huis. Rust, ontspanning en aandacht voor vrouwen en kinderen in Almere en omgeving.">
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Quicksand:wght@300;400&display=swap" rel="stylesheet">
 
@@ -14,13 +16,13 @@
 
 body{
 margin:0;
-font-family:Quicksand, sans-serif;
+font-family:Quicksand,sans-serif;
 color:white;
 background:black;
 overflow-x:hidden;
 }
 
-/* lichte paarse galaxy gloed */
+/* galaxy */
 
 body::before{
 content:"";
@@ -34,15 +36,7 @@ background:
 radial-gradient(circle at 40% 20%, #7a2cff33, transparent 60%),
 radial-gradient(circle at 80% 80%, #300055, transparent 70%);
 
-animation:nebulaMove 40s infinite alternate ease-in-out;
 z-index:-2;
-}
-
-@keyframes nebulaMove{
-
-0%{transform:translateY(0px);}
-100%{transform:translateY(-80px);}
-
 }
 
 /* sterren */
@@ -65,7 +59,6 @@ animation:floatLogo 6s ease-in-out infinite;
 
 .logo{
 width:100%;
-display:block;
 }
 
 .logo-container::before{
@@ -81,36 +74,15 @@ filter:blur(60px);
 z-index:-1;
 }
 
-/* draaiende sterren */
-
-.logo-container::after{
-content:"✦ ✦ ✦";
-position:absolute;
-top:-20px;
-left:-20px;
-width:300px;
-height:300px;
-font-size:20px;
-color:#e8c9ff;
-animation:spinStars 20s linear infinite;
-}
-
-@keyframes spinStars{
-0%{transform:rotate(0deg);}
-100%{transform:rotate(360deg);}
-}
-
 @keyframes floatLogo{
-0%{transform:translateY(0px);}
-50%{transform:translateY(-10px);}
-100%{transform:translateY(0px);}
+0%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+100%{transform:translateY(0)}
 }
-
-/* titel */
 
 h1{
 text-align:center;
-font-family:Cinzel, serif;
+font-family:Cinzel,serif;
 font-size:52px;
 letter-spacing:3px;
 color:#e8c9ff;
@@ -140,25 +112,11 @@ margin-bottom:30px;
 backdrop-filter:blur(6px);
 }
 
-/* review formulier */
+/* reviews */
 
-textarea{
-width:100%;
-height:80px;
-border-radius:10px;
-border:none;
-padding:10px;
-margin-top:10px;
-}
-
-button{
-background:#7a2cff;
-border:none;
-padding:12px 20px;
-color:white;
-border-radius:10px;
-margin-top:10px;
-cursor:pointer;
+.review{
+margin-top:15px;
+font-size:18px;
 }
 
 /* mobiel */
@@ -200,7 +158,6 @@ display:flex;
 align-items:center;
 justify-content:center;
 text-decoration:none;
-box-shadow:0 0 15px rgba(0,0,0,0.4);
 z-index:1000;
 }
 
@@ -208,6 +165,10 @@ footer{
 text-align:center;
 padding:25px;
 background:rgba(0,0,0,0.7);
+}
+
+a{
+color:#e8c9ff;
 }
 
 </style>
@@ -232,12 +193,15 @@ Wees welkom en voel de magie van UniFlora
 
 <div class="card">
 
-<h2>Over Florije</h2>
+<h2>Massage in Almere – rust en ontspanning</h2>
 
 <p>
-Mijn naam is Florije en ik ben de oprichter van UniFlora.
-Met rust, aandacht en intuïtie geef ik ontspanningsmassages
-en zwangerschapsmassages voor vrouwen in Almere en omgeving.
+UniFlora Massage in Almere biedt ontspannende massages aan huis voor vrouwen en kinderen.  
+Mijn naam is Florije en met aandacht, rust en intuïtie help ik het lichaam te ontspannen en spanning los te laten.
+</p>
+
+<p>
+Een massage bij UniFlora is een moment voor jezelf – een moment om weer in contact te komen met je lichaam en volledig tot rust te komen.
 </p>
 
 </div>
@@ -246,16 +210,25 @@ en zwangerschapsmassages voor vrouwen in Almere en omgeving.
 
 <h2>Massages</h2>
 
+<h3>Ontspanningsmassage</h3>
+
 <p>
-Ontspanningsmassage van hoofd, gezicht, nek, schouders,
-rug, buik, armen, benen en voeten.
+Een rustgevende massage van hoofd, gezicht, nek, schouders, rug, buik, armen, benen en voeten.  
+Deze massage helpt stress te verminderen en het lichaam weer in balans te brengen.
 </p>
 
 <h3>Zwangerschapsmassage</h3>
 
 <p>
-Speciaal voor zwangere vrouwen voor ontspanning
-en verlichting van spanning.
+Tijdens de zwangerschap verandert het lichaam voortdurend.  
+Een zwangerschapsmassage helpt om spanning in rug, schouders en benen te verminderen en zorgt voor diepe ontspanning voor moeder en baby.
+</p>
+
+<h3>Kindermassage</h3>
+
+<p>
+Ook kinderen kunnen spanning ervaren door groei, school of emoties.  
+Een zachte en rustige massage helpt kinderen ontspannen en geeft een gevoel van veiligheid en rust.
 </p>
 
 </div>
@@ -266,25 +239,30 @@ en verlichting van spanning.
 
 <p><strong>€60 per uur</strong></p>
 
-<p>Inclusief reiskosten binnen Almere</p>
+<p>Inclusief reiskosten binnen Almere.</p>
 
-<p>Buiten Almere <strong>€10 afhankelijk van de afstand</strong></p>
+<p>Buiten Almere: <strong>vanaf €10 afhankelijk van de afstand.</strong></p>
 
 </div>
 
 <div class="card">
 
-<h2>Review achterlaten</h2>
+<h2>Wat klanten zeggen</h2>
 
-<p>Deel jouw ervaring met UniFlora:</p>
+<div class="review">
+⭐⭐⭐⭐⭐  
+"Heerlijke ontspannende massage. Ik voelde me direct op mijn gemak."
+</div>
 
-<textarea placeholder="Schrijf hier je ervaring..."></textarea>
+<div class="review">
+⭐⭐⭐⭐⭐  
+"Florije heeft een rustige en warme energie."
+</div>
 
-<br>
-
-<button onclick="alert('Bedankt voor je review!')">
-Review versturen
-</button>
+<div class="review">
+⭐⭐⭐⭐⭐  
+"De zwangerschapsmassage was echt een moment van rust."
+</div>
 
 </div>
 
@@ -293,28 +271,28 @@ Review versturen
 <h2>Afspraak maken</h2>
 
 <p>
-📧 Email voor afspraak:
-<a href="mailto:info@ikbenuniflora.nl">
-info@ikbenuniflora.nl
+📧 Email voor afspraak  
+<a href="mailto:afspraak@ikbenuniflora.nl">
+afspraak@ikbenuniflora.nl
 </a>
 </p>
 
 <p>
-📱 WhatsApp:
+📱 WhatsApp  
 <a href="https://wa.me/31648133056">
 0648133056
 </a>
 </p>
 
 <p>
-📷 Instagram:
+📷 Instagram  
 <a href="https://instagram.com/ikbenuniflora">
 Ikbenuniflora
 </a>
 </p>
 
 <p>
-👍 Facebook:
+👍 Facebook  
 <a href="https://facebook.com/ikbenuniflora">
 Ikbenuniflora
 </a>
